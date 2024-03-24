@@ -1,5 +1,5 @@
 import streamlit as st
-from database import conectar_banco
+from database import conectar_banco, listar_dados
 
 
 def main():
@@ -30,6 +30,12 @@ def main():
             except Exception as e:
                 st.error(f"Erro ao enviar dados: {e}")
     
+    with st.expander('Lista de Dados Cadastrados:'):
+        dados = listar_dados()
+        if dados:
+            st.write(dados)
+        else:
+            st.write("Nenhum dado cadastrado ainda.")
 
 
 if __name__ == "__main__":
