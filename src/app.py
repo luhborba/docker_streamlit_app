@@ -1,8 +1,11 @@
+"""Arquivo Principal do FrontEnd."""
 import streamlit as st
+import pandas as pd
 from database import conectar_banco, listar_dados
 
 
 def main():
+    """Função Principal de FrontEnd."""
     st.set_page_config(
         page_title="App de Metas",
         page_icon=":bar_chart:",
@@ -33,7 +36,9 @@ def main():
     with st.expander('Lista de Dados Cadastrados:'):
         dados = listar_dados()
         if dados:
-            st.write(dados)
+            nomes_colunas = ['ID', 'Visualizações no Youtube', 'Inscritos no Youtube', 'Visualizações no Youtube 28 dias', 'Visualizações no Youtube 48 horas', 'Seguidores no Linkedin', 'Impressões no 28 dias', 'Impressores no 90 dias', 'Data de Envio']
+            df = pd.DataFrame(dados[1:], columns=nomes_colunas)
+            st.write(df)  # Exibe o DataFrame pandasbe os dados em formato de tabela com os nomes das colunas
         else:
             st.write("Nenhum dado cadastrado ainda.")
 
