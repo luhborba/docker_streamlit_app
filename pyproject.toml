@@ -19,8 +19,17 @@ pip-audit = "^2.7.2"
 taskipy = "^1.12.2"
 pydocstyle = "^6.3.0"
 pre-commit = "^3.6.2"
+mkdocs-material = "^9.5.15"
+mkdocstrings = {extras = ["python"], version = "^0.24.1"}
+pymdown-extensions = "^10.7.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+format = "poetry run isort . && poetry run black ."
+test = "poetry run pytest -v"
+run = "streamlit run src/app.py"
+docs = "mkdocs serve"

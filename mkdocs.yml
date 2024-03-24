@@ -1,0 +1,29 @@
+site_name: Streamlit com Docker
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Modo Claro
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7
+        name: Modo Escuro
+
+  language: pt
+
+repo_name: "luhborba/docker_streamlit_app"
+repo_url: "https://github.com/luhborba/docker_streamlit_app"
+
+markdown_extensions:
+
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python

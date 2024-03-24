@@ -2,7 +2,7 @@
 
 Bem vindo ao projeto de **Acompanhando Indicadores** utilizando Streamlit e Docker para Deploy, a ideia geral deste projeto é criar uma aplicação Streamlit onde podemos registrar os indicadores do Youtube e LinkedIn, assim poder monitorar a movimentação nestas redes e realizar o deploy utilizando Docker.
 
-Acesse a Documentação deste projeto [Documentação feita em MkDocs](https://luhborba.github.io/docker_streamlit_app/)
+
 ## Stack Utilizada
 
 - Python
