@@ -1,2 +1,0 @@
-streamlit
-psycopg2-binary
