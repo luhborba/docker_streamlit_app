@@ -59,6 +59,28 @@ def conectar_banco(visualizacao_youtube, inscricao_youtube, visualizacao_youtube
         cursor.close()
         conexao.close()
 
-        
+def listar_dados():
+    try:
+        conexao = pg.connect(
+            dbname='mydatabase',
+            user='user',
+            password='password',
+            host='postgres'
+        )
+        cursor = conexao.cursor()
+
+        cursor.execute("SELECT * FROM dados_redes_sociais")
+        dados = cursor.fetchall()
+        return dados
+
+    except Exception as e:
+        st.error(f'Error ao se conectar com o banco {e}')
+
+    finally:
+        if 'conexao' in locals():
+            conexao.close()
+        if 'cursor' in locals():
+            cursor.close()
+
 if __name__ == '__main__':
     print(conectar_banco())
